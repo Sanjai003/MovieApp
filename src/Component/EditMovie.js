@@ -59,7 +59,7 @@ function EditForm({ movie }) {
   const navigate = useNavigate();
 
   const editMovie = (values) => {
-    fetch(`https://65f16b85034bdbecc76270a5.mockapi.io/movie/${movie.id}`, {
+    fetch(`https://65f16b7b034bdbecc7627048.mockapi.io/Movie/${movie.id}`, {
       method: "PUT",
       body: JSON.stringify(values),
       headers: { "Content-Type": "application/json" },

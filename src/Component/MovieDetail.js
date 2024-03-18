@@ -17,7 +17,7 @@ export default function MovieDetail() {
   };
 
   useEffect(() => {
-    fetch(`https://65f16b85034bdbecc76270a5.mockapi.io/movie/${id}`, {
+    fetch(`https://65f16b7b034bdbecc7627048.mockapi.io/Movie/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())
