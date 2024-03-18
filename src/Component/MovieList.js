@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import Movie from "./Movie";
 import TopBar from "./TopBar";
 import "./Movie.css";
+import { API } from "./global";
 
 export default function MovieList() {
   const [movie, setMovie] = useState([]);
 
   const getMovie = () => {
-    fetch("https://65f16b7b034bdbecc7627048.mockapi.io/Movie", {
+    fetch(`${API}/get`, {
+   // fetch("https://65f16b7b034bdbecc7627048.mockapi.io/Movie", {
       method: "GET",
     })
       .then((data) => data.json())

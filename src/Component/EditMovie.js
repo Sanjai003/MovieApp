@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate, useParams } from "react-router-dom";
+import { API } from "./global";
 
 export default function EditMovie() {
   const { id } = useParams();
@@ -16,7 +17,8 @@ export default function EditMovie() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://65f16b85034bdbecc76270a5.mockapi.io/movie/${id}`, {
+   // fetch(`https://65f16b85034bdbecc76270a5.mockapi.io/movie/${id}`, {
+      fetch(`${API}/getone/${id}`, {
       method: "GET",
     })
       .then((data) => data.json())
@@ -59,7 +61,8 @@ function EditForm({ movie }) {
   const navigate = useNavigate();
 
   const editMovie = (values) => {
-    fetch(`https://65f16b7b034bdbecc7627048.mockapi.io/Movie/${movie.id}`, {
+  //  fetch(`https://65f16b7b034bdbecc7627048.mockapi.io/Movie/${movie.id}`, {
+      fetch(`${API}/update/${movie._id}`, {
       method: "PUT",
       body: JSON.stringify(values),
       headers: { "Content-Type": "application/json" },
